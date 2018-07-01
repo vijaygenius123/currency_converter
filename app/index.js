@@ -7,4 +7,4 @@ EStyleSheet.build({
     $primaryBlue: '#4F6D7A'
 })
 
-export default () =>  <Home />;
+export default   () => <Home />;
