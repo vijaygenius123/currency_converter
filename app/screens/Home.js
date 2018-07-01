@@ -1,10 +1,11 @@
 import React,{Component} from 'react';
-import { View ,StatusBar } from 'react-native';
+import { View ,StatusBar, KeyboardAvoidingView } from 'react-native';
 
 import {Container} from '../components/Container';
 import Logo from '../components/Logo';
 import InputWithButton from '../components/TextInput';
 import ClearButton from '../components/Button';
+import Header from '../components/Header';
 
 const TEMP_BASE_CURRENCY = 'USD';
 const TEMP_QUOTE_CURRENCY = 'INR';
@@ -23,11 +24,16 @@ class Home extends Component {
     }
 
     handleTextChange = (text) => {
-        console.log('Logged: ' + text)
+        console.log('Logged:' + text)
     }
 
     handleSwapCurrency = (text) => {
-        console.log('Swap Currency: ');
+        console.log('Swap Currency');
+
+    }
+
+    handleSettings = () => {
+        console.log('Settings');
 
     }
 
@@ -35,6 +41,8 @@ class Home extends Component {
     return (
         <Container>
             <StatusBar translucent={false} barStyle="light-content" />
+            <Header onPress={this.handleSettings}/>
+            <KeyboardAvoidingView behavior="padding">
             <Logo />
             <InputWithButton 
             buttonText = {TEMP_BASE_CURRENCY}
@@ -53,6 +61,7 @@ class Home extends Component {
             text = "Reverse Currency"
             onPress = {this.handleSwapCurrency}
             />
+            </KeyboardAvoidingView>
         </Container>
     );
     }
