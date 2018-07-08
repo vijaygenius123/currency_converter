@@ -17,10 +17,12 @@ class Home extends Component {
 
     handlePressBaseCurrency = () => {
         console.log('Press Base');
+        this.props.navigation.navigate('CurrencyList',{title: 'Base Currency'});
     }
     
     handlePressQuoteCurrency =  () => {
         console.log('Press Quote');
+        this.props.navigation.navigate('CurrencyList',{title: 'Quote Currency'});
     }
 
     handleTextChange = (text) => {

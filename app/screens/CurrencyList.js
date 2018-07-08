@@ -12,6 +12,7 @@ class  CurrencyList extends Component {
 
     handlePress = () => {
         console.log("Currency Pressed");
+        this.props.navigation.goBack(null);
     }
     
     render(){
